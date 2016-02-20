@@ -15,10 +15,11 @@ class APIClient: NSObject {
     static let kNextFromField:String = "next_from"
     static let kStartFrom:String = "start_from"
     static let kAccessToken:String = "access_token"
+    static let kUserIdField:String = "user_id"
     static let kGetFeedsUrlString:String = "https://api.vk.com/method/newsfeed.get?v=5.45&filters=post&"
     static let kAutorizationUrlString:String = "https://oauth.vk.com/authorize?client_id=3308962&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends&response_type=token&v=5.45&scope=wall,friends,offline"
     static var token:String?
-    
+    static var userId:String?
     var currentPage:String! = ""
     var nextPage:String? = nil
     var error:NSError?
@@ -28,6 +29,7 @@ class APIClient: NSObject {
     override init() {
         if  (APIClient.token == nil) {
             APIClient.token = NSUserDefaults.standardUserDefaults().valueForKey(APIClient.kAccessToken) as? String
+            APIClient.userId = NSUserDefaults.standardUserDefaults().valueForKey(APIClient.kUserIdField) as? String
         }
     }
     func parceResults(results:NSDictionary!, callback:(client:APIClient)->Void) -> Void {
@@ -42,12 +44,15 @@ class APIClient: NSObject {
             APIClient.totalDownloadPosts += res.count
             
             for item in res {
-                var post:Post? = Post.MR_findFirstByAttribute("postId", withValue: (item["post_id"] as? NSNumber)!, inContext:context)
+                let predicate:NSPredicate? = NSPredicate(format: "postId=%@ AND userId=%@", (item["post_id"] as? NSNumber)!, APIClient.userId!)
+                var post:Post? = Post.MR_findFirstWithPredicate(predicate, inContext: context)
+                //Post.MR_findFirstByAttribute("postId", withValue: (item["post_id"] as? NSNumber)!, inContext:context)
                 if post != nil {
                     continue
                 }
                 if item.valueForKey("copy_history") != nil {continue}
                 post = Post.MR_createEntityInContext(context)!
+                post!.userId = APIClient.userId
                 post?.setData(item as! [NSObject : AnyObject])
             }
             }) { (result, error) -> Void in
@@ -83,14 +88,24 @@ class APIClient: NSObject {
         }
         if params.valueForKey(APIClient.kAccessToken) != nil {
             APIClient.token = params.valueForKey(APIClient.kAccessToken) as? String
+            APIClient.userId = params.valueForKey(APIClient.kUserIdField) as? String
             NSUserDefaults.standardUserDefaults().setValue(APIClient.token, forKey: APIClient.kAccessToken)
+            NSUserDefaults.standardUserDefaults().setValue(APIClient.userId, forKey: APIClient.kUserIdField)
             return true
         }
         return false
     }
-    func logout () {
-        self.manager.GET("https://oauth.vk.com/logout", parameters: nil, progress: nil, success: nil, failure: nil)
+    static func logout () {
+//        self.manager.GET("https://oauth.vk.com/logout", parameters: nil, progress: nil, success: nil, failure: nil)
+        let cookieStorage:NSHTTPCookieStorage! = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        if cookieStorage.cookies != nil {
+            for cookie in cookieStorage.cookies! {
+                cookieStorage.deleteCookie(cookie)
+            }
+        }
         APIClient.token = nil
         NSUserDefaults.standardUserDefaults().removeObjectForKey(APIClient.kAccessToken)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(APIClient.kUserIdField)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

@@ -25,18 +25,29 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDataSource
             webView.hidden = true
             self.refresh(nil)
         } else {
-            webView.loadRequest(NSURLRequest(URL: NSURL(string: APIClient.kAutorizationUrlString)!))
+            self.login()
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBAction func logout() {
-        self.client.logout()
+    func login() {
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: APIClient.kAutorizationUrlString)!))
+        webView.hidden = false
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func logout() {
+        APIClient.logout()
+        self.data.removeAll()
+        tableView.reloadData()
+        self.login()
+    }
     func refresh(refreshControl: UIRefreshControl?) {
+        if (APIClient.userId == nil)||(APIClient.token == nil) {
+            self.logout()
+            return
+        }
         if self.isLoading {
             return;
         }
@@ -45,7 +56,8 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDataSource
         if refreshControl != nil {page = nil}
         self.client.loadData(page) { (client) -> Void in
             self.data.removeAll()
-            let array:[Post]! = Post.MR_findAllSortedBy("date", ascending: false) as! [Post]
+            let array:[Post]! = Post.MR_findByAttribute("userId", withValue: APIClient.userId!, andOrderBy: "date", ascending: false) as! [Post]
+            //Post.MR_findAllSortedBy("date", ascending: false) as! [Post]
             if array.count != self.data.count {
                 self.data.insertContentsOf(array, at: 0)
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in

@@ -29,7 +29,7 @@
     self.date = [item valueForKey:@"date"];
     self.type = [item valueForKey:@"type"];
     self.text = [item valueForKey:@"text"];
-
+    
     if (![item valueForKey:@"attachments"]) return;
     
     for (NSDictionary* attachment in [item valueForKey:@"attachments"]) {

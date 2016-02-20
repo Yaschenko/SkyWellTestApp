@@ -18,5 +18,6 @@
 @dynamic type;
 @dynamic relationship;
 @dynamic date;
+@dynamic userId;
 
 @end
