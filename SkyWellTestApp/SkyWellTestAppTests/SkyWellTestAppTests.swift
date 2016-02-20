@@ -36,7 +36,6 @@ class SkyWellTestAppTests: XCTestCase {
     //delete empty post
     func testSetPostWithEmptyDictionary() {
         let count:UInt = Post.MR_countOfEntities()
-        print(String(count))
         let post:Post = Post.MR_createEntity()!
         let count1:UInt = Post.MR_countOfEntities()
         XCTAssertTrue(count != count1)

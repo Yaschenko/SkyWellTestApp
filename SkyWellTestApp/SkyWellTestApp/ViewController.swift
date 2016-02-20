@@ -96,9 +96,19 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDataSource
         var imageHeight:CGFloat = 0
         
         if post.relationship?.count > 0 {
-            imageHeight = (tableView.frame.size.width - 30) / CGFloat(post.relationship!.first!.width!) * CGFloat(post.relationship!.first!.height!)
+            if (post.relationship!.first!.width == nil)||(post.relationship!.first!.height == nil) {
+                imageHeight = 60;
+            } else {
+                imageHeight = (tableView.frame.size.width - 30) / CGFloat(post.relationship!.first!.width!) * CGFloat(post.relationship!.first!.height!)
+            }
         }
         return imageHeight + self.textHeight(post.text!, width: tableView.frame.size.width - 30)
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row >= self.data.count-20)||(indexPath.row >= APIClient.totalDownloadPosts-20) {
+            self.refresh(nil)
+        }
     }
     
     func textHeight(text:String?, width:CGFloat)->CGFloat {
@@ -108,11 +118,6 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDataSource
         let boundingBox = text!.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(15)], context: nil)
         
         return boundingBox.height + 6
-    }
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row >= self.data.count-20)||(indexPath.row >= APIClient.totalDownloadPosts-20) {
-            self.refresh(nil)
-        }
     }
 }
 
