@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4516DE99D73996C795E677D6 /* Pods_SkyWellTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0371986D4B38D1F4A1F799B /* Pods_SkyWellTestApp.framework */; };
+		5A04ADD61C77FA58009BD4E6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04ADD51C77FA58009BD4E6 /* CustomTableViewCell.swift */; };
+		5A360CF11C77ACE50087DC32 /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A360CEA1C77ACE50087DC32 /* Photo+CoreDataProperties.m */; };
+		5A360CF21C77ACE50087DC32 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A360CEC1C77ACE50087DC32 /* Photo.m */; };
+		5A360CF31C77ACE50087DC32 /* Post+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A360CEE1C77ACE50087DC32 /* Post+CoreDataProperties.m */; };
+		5A360CF41C77ACE50087DC32 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A360CF01C77ACE50087DC32 /* Post.m */; };
 		5A863B6F1C777284006FB5AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A863B6E1C777284006FB5AF /* AppDelegate.swift */; };
 		5A863B711C777284006FB5AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A863B701C777284006FB5AF /* ViewController.swift */; };
 		5A863B741C777284006FB5AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A863B721C777284006FB5AF /* Main.storyboard */; };
@@ -15,6 +21,7 @@
 		5A863B7C1C777284006FB5AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A863B7A1C777284006FB5AF /* LaunchScreen.storyboard */; };
 		5A863B871C777284006FB5AF /* SkyWellTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A863B861C777284006FB5AF /* SkyWellTestAppTests.swift */; };
 		5A863B921C777284006FB5AF /* SkyWellTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A863B911C777284006FB5AF /* SkyWellTestAppUITests.swift */; };
+		5A863BA01C778F83006FB5AF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A863B9F1C778F83006FB5AF /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A5E701DCFEB5CB23AFEDD3E /* Pods-SkyWellTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyWellTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyWellTestApp/Pods-SkyWellTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5A04ADD51C77FA58009BD4E6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5A360CE81C77ACE40087DC32 /* SkyWellTestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyWellTestApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A360CE91C77ACE50087DC32 /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5A360CEA1C77ACE50087DC32 /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5A360CEB1C77ACE50087DC32 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		5A360CEC1C77ACE50087DC32 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		5A360CED1C77ACE50087DC32 /* Post+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Post+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5A360CEE1C77ACE50087DC32 /* Post+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Post+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5A360CEF1C77ACE50087DC32 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		5A360CF01C77ACE50087DC32 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		5A863B6B1C777284006FB5AF /* SkyWellTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWellTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A863B6E1C777284006FB5AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A863B701C777284006FB5AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +67,9 @@
 		5A863B8D1C777284006FB5AF /* SkyWellTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyWellTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A863B911C777284006FB5AF /* SkyWellTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWellTestAppUITests.swift; sourceTree = "<group>"; };
 		5A863B931C777284006FB5AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A863B9F1C778F83006FB5AF /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		990646101296445AA64E2F22 /* Pods-SkyWellTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyWellTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyWellTestApp/Pods-SkyWellTestApp.release.xcconfig"; sourceTree = "<group>"; };
+		E0371986D4B38D1F4A1F799B /* Pods_SkyWellTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyWellTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4516DE99D73996C795E677D6 /* Pods_SkyWellTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +105,8 @@
 				5A863B851C777284006FB5AF /* SkyWellTestAppTests */,
 				5A863B901C777284006FB5AF /* SkyWellTestAppUITests */,
 				5A863B6C1C777284006FB5AF /* Products */,
+				F666C2D4CAF70AA688E64E0F /* Pods */,
+				6A7D5C5020D855DC783A0191 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +130,17 @@
 				5A863B7A1C777284006FB5AF /* LaunchScreen.storyboard */,
 				5A863B7D1C777284006FB5AF /* Info.plist */,
 				5A863B751C777284006FB5AF /* SkyWellTestApp.xcdatamodeld */,
+				5A360CE91C77ACE50087DC32 /* Photo+CoreDataProperties.h */,
+				5A360CEA1C77ACE50087DC32 /* Photo+CoreDataProperties.m */,
+				5A360CEB1C77ACE50087DC32 /* Photo.h */,
+				5A360CEC1C77ACE50087DC32 /* Photo.m */,
+				5A360CED1C77ACE50087DC32 /* Post+CoreDataProperties.h */,
+				5A360CEE1C77ACE50087DC32 /* Post+CoreDataProperties.m */,
+				5A360CEF1C77ACE50087DC32 /* Post.h */,
+				5A360CF01C77ACE50087DC32 /* Post.m */,
+				5A863B9F1C778F83006FB5AF /* APIClient.swift */,
+				5A360CE81C77ACE40087DC32 /* SkyWellTestApp-Bridging-Header.h */,
+				5A04ADD51C77FA58009BD4E6 /* CustomTableViewCell.swift */,
 			);
 			path = SkyWellTestApp;
 			sourceTree = "<group>";
@@ -128,6 +163,23 @@
 			path = SkyWellTestAppUITests;
 			sourceTree = "<group>";
 		};
+		6A7D5C5020D855DC783A0191 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0371986D4B38D1F4A1F799B /* Pods_SkyWellTestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F666C2D4CAF70AA688E64E0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E701DCFEB5CB23AFEDD3E /* Pods-SkyWellTestApp.debug.xcconfig */,
+				990646101296445AA64E2F22 /* Pods-SkyWellTestApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A863B961C777284006FB5AF /* Build configuration list for PBXNativeTarget "SkyWellTestApp" */;
 			buildPhases = (
+				EDE33CDB09BD89E4483916ED /* Check Pods Manifest.lock */,
 				5A863B671C777284006FB5AF /* Sources */,
 				5A863B681C777284006FB5AF /* Frameworks */,
 				5A863B691C777284006FB5AF /* Resources */,
+				6CD447735732C66840591479 /* Embed Pods Frameworks */,
+				F6CC0059133FBA85EA85F76D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,14 +309,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6CD447735732C66840591479 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyWellTestApp/Pods-SkyWellTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDE33CDB09BD89E4483916ED /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6CC0059133FBA85EA85F76D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyWellTestApp/Pods-SkyWellTestApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A863B671C777284006FB5AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A04ADD61C77FA58009BD4E6 /* CustomTableViewCell.swift in Sources */,
+				5A360CF21C77ACE50087DC32 /* Photo.m in Sources */,
 				5A863B711C777284006FB5AF /* ViewController.swift in Sources */,
 				5A863B6F1C777284006FB5AF /* AppDelegate.swift in Sources */,
 				5A863B771C777284006FB5AF /* SkyWellTestApp.xcdatamodeld in Sources */,
+				5A360CF31C77ACE50087DC32 /* Post+CoreDataProperties.m in Sources */,
+				5A863BA01C778F83006FB5AF /* APIClient.swift in Sources */,
+				5A360CF11C77ACE50087DC32 /* Photo+CoreDataProperties.m in Sources */,
+				5A360CF41C77ACE50087DC32 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,23 +510,34 @@
 		};
 		5A863B971C777284006FB5AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5E701DCFEB5CB23AFEDD3E /* Pods-SkyWellTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = SkyWellTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ee.nostris.SkyWellTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SkyWellTestApp/SkyWellTestApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5A863B981C777284006FB5AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990646101296445AA64E2F22 /* Pods-SkyWellTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = SkyWellTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ee.nostris.SkyWellTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SkyWellTestApp/SkyWellTestApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -488,6 +608,7 @@
 				5A863B981C777284006FB5AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A863B991C777284006FB5AF /* Build configuration list for PBXNativeTarget "SkyWellTestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +617,7 @@
 				5A863B9B1C777284006FB5AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A863B9C1C777284006FB5AF /* Build configuration list for PBXNativeTarget "SkyWellTestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +626,7 @@
 				5A863B9E1C777284006FB5AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

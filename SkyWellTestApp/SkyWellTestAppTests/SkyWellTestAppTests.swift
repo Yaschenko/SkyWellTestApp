@@ -32,5 +32,17 @@ class SkyWellTestAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+//Post
+    //delete empty post
+    func testSetPostWithEmptyDictionary() {
+        let count:UInt = Post.MR_countOfEntities()
+        print(String(count))
+        let post:Post = Post.MR_createEntity()!
+        let count1:UInt = Post.MR_countOfEntities()
+        XCTAssertTrue(count != count1)
+        post.setData(NSDictionary() as [NSObject : AnyObject])
+        let count2:UInt = Post.MR_countOfEntities()
+        XCTAssertTrue(count == count2)
+    }
+
 }

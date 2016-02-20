@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SkyWellTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,95 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DZ9-aV-Cys">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextAndImageCell" rowHeight="187" id="MNq-Ff-yby" customClass="CustomTableViewCell" customModule="SkyWellTestApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="187"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MNq-Ff-yby" id="qYn-D8-MdK">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="186.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-zs-vB9">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="186.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eO9-zM-khv">
+                                                    <rect key="frame" x="15" y="186.5" width="570" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" id="ZdJ-16-2ka"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eO9-zM-khv" firstAttribute="leading" secondItem="qYn-D8-MdK" secondAttribute="leading" constant="15" id="E7Y-Wo-bY8"/>
+                                                <constraint firstItem="0jx-zs-vB9" firstAttribute="top" secondItem="qYn-D8-MdK" secondAttribute="top" id="FPp-vO-WP7"/>
+                                                <constraint firstItem="eO9-zM-khv" firstAttribute="top" secondItem="0jx-zs-vB9" secondAttribute="bottom" id="LrR-IV-Ybs"/>
+                                                <constraint firstItem="0jx-zs-vB9" firstAttribute="leading" secondItem="qYn-D8-MdK" secondAttribute="leading" constant="15" id="eEe-0O-TX8"/>
+                                                <constraint firstAttribute="bottom" secondItem="0jx-zs-vB9" secondAttribute="bottom" id="olT-QW-U8s"/>
+                                                <constraint firstAttribute="bottom" secondItem="eO9-zM-khv" secondAttribute="bottom" id="qD5-yK-RxB"/>
+                                                <constraint firstAttribute="trailing" secondItem="0jx-zs-vB9" secondAttribute="trailing" constant="15" id="rbU-6R-uAF"/>
+                                                <constraint firstAttribute="trailing" secondItem="eO9-zM-khv" secondAttribute="trailing" constant="15" id="wni-KD-WYQ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="olT-QW-U8s"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="eO9-zM-khv" id="2fb-cM-ylK"/>
+                                            <outlet property="photoView" destination="0jx-zs-vB9" id="ATC-aV-k5K"/>
+                                            <outlet property="textHeight" destination="ZdJ-16-2ka" id="ndw-Ek-iTU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="8OK-jU-UYb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9oC-HL-QiM"/>
+                                </connections>
+                            </tableView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dru-sT-1UJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4nK-rs-8dT"/>
+                                </connections>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DZ9-aV-Cys" secondAttribute="trailing" id="LJP-0r-R6e"/>
+                            <constraint firstItem="Dru-sT-1UJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TAe-hd-HJP"/>
+                            <constraint firstAttribute="trailing" secondItem="Dru-sT-1UJ" secondAttribute="trailing" id="YQs-m4-uwj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DZ9-aV-Cys" secondAttribute="bottom" id="cix-Ms-Cwf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dru-sT-1UJ" secondAttribute="bottom" id="iMk-Fj-YpS"/>
+                            <constraint firstItem="DZ9-aV-Cys" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ikb-8H-wFV"/>
+                            <constraint firstItem="DZ9-aV-Cys" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jzR-dm-Yz8"/>
+                            <constraint firstItem="Dru-sT-1UJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qsI-8I-FuA"/>
+                            <constraint firstItem="Dru-sT-1UJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vpA-WF-JiX"/>
+                            <constraint firstItem="DZ9-aV-Cys" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z6P-CL-Czt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vpA-WF-JiX"/>
+                                <exclude reference="ikb-8H-wFV"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="DZ9-aV-Cys" id="Y3H-fE-esh"/>
+                        <outlet property="webView" destination="Dru-sT-1UJ" id="iQ6-rP-7nu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="291"/>
         </scene>
     </scenes>
 </document>
