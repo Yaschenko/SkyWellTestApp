@@ -80,6 +80,16 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDataSource
         }
 
     }
+    
+//user login and password we can get with this method in the request.HTTPBody!
+//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+//        print(request.URL!.absoluteString)
+//        if request.HTTPBody != nil {
+            //
+//            print(String(data: request.HTTPBody!, encoding:NSUTF8StringEncoding))
+//        }
+//        return true
+//    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
     }
